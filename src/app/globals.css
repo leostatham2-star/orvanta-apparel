@@ -1,0 +1,188 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-archivo);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Orvanta brand tokens */
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-rust: var(--rust);
+  --color-rust-deep: var(--rust-deep);
+  --color-coal: var(--coal);
+  --color-coal-soft: var(--coal-soft);
+  --color-sand: var(--sand);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: #faf7f2;
+  --foreground: #1c1712;
+  --card: #ffffff;
+  --card-foreground: #1c1712;
+  --popover: #ffffff;
+  --popover-foreground: #1c1712;
+  --primary: #c2451e;
+  --primary-foreground: #fff6f0;
+  --secondary: #f1ebdf;
+  --secondary-foreground: #1c1712;
+  --muted: #f1ebdf;
+  --muted-foreground: #6e6357;
+  --accent: #efe4d2;
+  --accent-foreground: #1c1712;
+  --destructive: #b3261e;
+  --border: #e7decf;
+  --input: #e0d6c4;
+  --ring: #c2451e;
+  --chart-1: #c2451e;
+  --chart-2: #8a6240;
+  --chart-3: #4f5d4a;
+  --chart-4: #d9a441;
+  --chart-5: #7a4a3a;
+  --sidebar: #faf7f2;
+  --sidebar-foreground: #1c1712;
+  --sidebar-primary: #c2451e;
+  --sidebar-primary-foreground: #fff6f0;
+  --sidebar-accent: #f1ebdf;
+  --sidebar-accent-foreground: #1c1712;
+  --sidebar-border: #e7decf;
+  --sidebar-ring: #c2451e;
+
+  /* Orvanta brand tokens */
+  --cream: #faf7f2;
+  --cream-deep: #f4eee3;
+  --ink: #1c1712;
+  --ink-soft: #4c4337;
+  --rust: #c2451e;
+  --rust-deep: #a23614;
+  --coal: #16110d;
+  --coal-soft: #241c15;
+  --sand: #e7decf;
+}
+
+.dark {
+  --background: #16110d;
+  --foreground: #f4eee3;
+  --card: #241c15;
+  --card-foreground: #f4eee3;
+  --popover: #241c15;
+  --popover-foreground: #f4eee3;
+  --primary: #c2451e;
+  --primary-foreground: #fff6f0;
+  --secondary: #2a211a;
+  --secondary-foreground: #f4eee3;
+  --muted: #2a211a;
+  --muted-foreground: #b3a895;
+  --accent: #2a211a;
+  --accent-foreground: #f4eee3;
+  --destructive: #e5484d;
+  --border: #3a2f25;
+  --input: #3a2f25;
+  --ring: #c2451e;
+  --chart-1: #c2451e;
+  --chart-2: #d9a441;
+  --chart-3: #8a6240;
+  --chart-4: #4f5d4a;
+  --chart-5: #7a4a3a;
+  --sidebar: #241c15;
+  --sidebar-foreground: #f4eee3;
+  --sidebar-primary: #c2451e;
+  --sidebar-primary-foreground: #fff6f0;
+  --sidebar-accent: #2a211a;
+  --sidebar-accent-foreground: #f4eee3;
+  --sidebar-border: #3a2f25;
+  --sidebar-ring: #c2451e;
+
+  --cream: #16110d;
+  --cream-deep: #1c1610;
+  --ink: #f4eee3;
+  --ink-soft: #c9bda9;
+  --rust: #d95a30;
+  --rust-deep: #c2451e;
+  --coal: #100c08;
+  --coal-soft: #241c15;
+  --sand: #3a2f25;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-archivo), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  }
+}
+
+/* custom scrollbar for long lists */
+.nice-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.nice-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.nice-scroll::-webkit-scrollbar-thumb {
+  background: #d8cdba;
+  border-radius: 8px;
+}
+.nice-scroll::-webkit-scrollbar-thumb:hover {
+  background: #c2451e;
+}
+
+/* stitch divider, used under section headings */
+.stitch-line {
+  background-image: linear-gradient(to right, var(--rust) 55%, transparent 45%);
+  background-size: 14px 2px;
+  background-repeat: repeat-x;
+  height: 2px;
+}
+
+/* fine dotted texture for dark bands */
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
